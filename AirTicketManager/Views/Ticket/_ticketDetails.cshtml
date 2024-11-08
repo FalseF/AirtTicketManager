@@ -1,0 +1,11 @@
+﻿@model AirTicketEntittes.TicketViewModel
+
+<div>
+    <div><strong>Ticket ID:</strong> @Model.TicketID</div>
+    <div><strong>Passenger Name:</strong> @Model.PassengerName</div>
+    <div><strong>Departure Date:</strong> @Model.DepartureDate.ToString("yyyy-MM-dd HH:mm")</div>
+    <div><strong>Arrival Date:</strong> @Model.ArrivalDate.ToString("yyyy-MM-dd HH:mm")</div>
+    <div><strong>Ticket Price:</strong> @Model.TicketPrice.ToString("C")</div>
+    <div><strong>Priority:</strong> @Model.PriorityName</div>
+    <div><strong>Lebel:</strong> @Model.LebelName</div>
+</div>

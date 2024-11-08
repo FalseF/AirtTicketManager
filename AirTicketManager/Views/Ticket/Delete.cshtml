@@ -1,0 +1,13 @@
+﻿@model AirTicketEntittes.TicketViewModel
+
+<h3>Delete Ticket</h3>
+
+<p>Are you sure you want to delete the ticket for <strong>@Model.PassengerName</strong>?</p>
+
+<form asp-action="DeleteConfirmed" asp-controller="Ticket" method="post">
+    <!-- Hidden field to pass the TicketID -->
+    <input type="hidden" name="id" value="@Model.TicketID" />
+    @Html.AntiForgeryToken() <!-- CSRF token for security -->
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+</form>

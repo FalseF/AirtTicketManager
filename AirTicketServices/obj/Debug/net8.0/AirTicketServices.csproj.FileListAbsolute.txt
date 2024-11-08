@@ -1,0 +1,15 @@
+D:\Asp.net project\AirTicketManager\AirTicketServices\bin\Debug\net8.0\AirTicketServices.deps.json
+D:\Asp.net project\AirTicketManager\AirTicketServices\bin\Debug\net8.0\AirTicketServices.dll
+D:\Asp.net project\AirTicketManager\AirTicketServices\bin\Debug\net8.0\AirTicketServices.pdb
+D:\Asp.net project\AirTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicketServices.GeneratedMSBuildEditorConfig.editorconfig
+D:\Asp.net project\AirTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicketServices.AssemblyInfoInputs.cache
+D:\Asp.net project\AirTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicketServices.AssemblyInfo.cs
+D:\Asp.net project\AirTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicketServices.csproj.CoreCompileInputs.cache
+D:\Asp.net project\AirTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicketServices.dll
+D:\Asp.net project\AirTicketManager\AirTicketServices\obj\Debug\net8.0\refint\AirTicketServices.dll
+D:\Asp.net project\AirTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicketServices.pdb
+D:\Asp.net project\AirTicketManager\AirTicketServices\obj\Debug\net8.0\ref\AirTicketServices.dll
+D:\Asp.net project\AirTicketManager\AirTicketServices\bin\Debug\net8.0\AirTicketEntittes.dll
+D:\Asp.net project\AirTicketManager\AirTicketServices\bin\Debug\net8.0\AirTicketEntittes.pdb
+D:\Asp.net project\AirTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicketServices.csproj.AssemblyReference.cache
+D:\Asp.net project\AirTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicke.840AF3C1.Up2Date

@@ -1,0 +1,37 @@
+﻿@model AirTicketEntittes.TicketViewModel
+
+
+<h3>Edit Ticket</h3>
+<form asp-controller="Ticket" asp-action="Edit"  method="post">
+    <!-- Hidden input for TicketID -->
+    <input type="hidden" id="TicketID" name="TicketID" value="@Model.TicketID" />
+
+    <div class="form-group">
+        <label for="PassengerName">Passenger Name</label>
+        <input type="text" class="form-control" id="PassengerName" name="PassengerName" value="@Model.PassengerName" />
+    </div>
+
+    <div class="form-group">
+        <label for="PriorityId">Priority</label>
+        <select class="form-control" id="PriorityId" name="PriorityId" asp-for="PriorityId" asp-items="Model.AvailablePriorites">
+            <!-- Tag helpers will automatically populate the options -->
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="DepartureDate">Departure Date</label>
+        <input type="datetime-local" class="form-control" id="DepartureDate" name="DepartureDate" value="@Model.DepartureDate.ToString("yyyy-MM-ddTHH:mm")" />
+    </div>
+
+    <div class="form-group">
+        <label for="ArrivalDate">Arrival Date</label>
+        <input type="datetime-local" class="form-control" id="ArrivalDate" name="ArrivalDate" value="@Model.ArrivalDate.ToString("yyyy-MM-ddTHH:mm")" />
+    </div>
+
+    <div class="form-group">
+        <label for="TicketPrice">Ticket Price</label>
+        <input type="number" class="form-control" id="TicketPrice" name="TicketPrice" value="@Model.TicketPrice" />
+    </div>
+
+    <button type="submit">Save Changes</button>
+</form>

@@ -1,0 +1,12 @@
+D:\Asp.net project\AirTicketManager\AirTicketDAL\bin\Debug\net8.0\AirTicketDAL.deps.json
+D:\Asp.net project\AirTicketManager\AirTicketDAL\bin\Debug\net8.0\AirTicketDAL.dll
+D:\Asp.net project\AirTicketManager\AirTicketDAL\bin\Debug\net8.0\AirTicketDAL.pdb
+D:\Asp.net project\AirTicketManager\AirTicketDAL\obj\Debug\net8.0\AirTicketDAL.csproj.AssemblyReference.cache
+D:\Asp.net project\AirTicketManager\AirTicketDAL\obj\Debug\net8.0\AirTicketDAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Asp.net project\AirTicketManager\AirTicketDAL\obj\Debug\net8.0\AirTicketDAL.AssemblyInfoInputs.cache
+D:\Asp.net project\AirTicketManager\AirTicketDAL\obj\Debug\net8.0\AirTicketDAL.AssemblyInfo.cs
+D:\Asp.net project\AirTicketManager\AirTicketDAL\obj\Debug\net8.0\AirTicketDAL.csproj.CoreCompileInputs.cache
+D:\Asp.net project\AirTicketManager\AirTicketDAL\obj\Debug\net8.0\AirTicketDAL.dll
+D:\Asp.net project\AirTicketManager\AirTicketDAL\obj\Debug\net8.0\refint\AirTicketDAL.dll
+D:\Asp.net project\AirTicketManager\AirTicketDAL\obj\Debug\net8.0\AirTicketDAL.pdb
+D:\Asp.net project\AirTicketManager\AirTicketDAL\obj\Debug\net8.0\ref\AirTicketDAL.dll

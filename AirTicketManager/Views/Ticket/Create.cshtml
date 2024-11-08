@@ -1,0 +1,65 @@
+﻿@model AirTicketEntittes.TicketViewModel
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device width,initial scale=1.0" />
+        <title>
+            Create Ticket
+        </title>
+    </head>
+    <body>
+        <div class="form-container">
+        <h2>Create New Ticket</h2>
+        <form method="POST" asp-controller="Ticket" asp-action="Create">
+            <div class="form-group">
+                <label for="PassengerName">Passenger Name</label>
+                <input type="text" id="PassengerName" name="PassengerName"/>
+            </div>
+
+            <div class="form-group">
+                <label for="DepartureDate">Departure Date and Time</label>
+                <input type="date" id="DepartureDate" name="DepartureDate" />
+            </div>
+
+            <div class="form-group">
+                <label for="ArrivalDate">Arrival Date and Time</label>
+                <input type="date" id="ArrivalDate" name="ArrivalDate"  />
+            </div>
+
+            <div class="form-group">
+                <label for="TicketPrice">Ticket Price</label>
+                <input type="number" id="TicketPrice" name="TicketPrice" />
+            </div>
+
+            <div class="form-group">
+                <label for="PriorityId">Priority</label>
+                <select id="PriorityId" name="PriorityId" class="select-box" >
+                    @foreach (var item in Model.AvailablePriorites)
+                    {
+                        <option value="@item.Value">@item.Text</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="LebelId">Lebel</label>
+                <select id="LebelId" name="LebelId" class="select-box">
+                    @foreach (var item in Model.AvailableLebel)
+                    {
+                        <option value="@item.Value">@item.Text</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Create Ticket</button>
+            </div>
+        </form>
+        <div class="form-footer">
+            <p>© 2024 Your Company</p>
+        </div>
+     
+    </div>
+</body>
+</html>

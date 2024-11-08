@@ -1,0 +1,12 @@
+D:\Asp.net project\AirTicketManager\AirTicketEntittes\bin\Debug\net8.0\AirTicketEntittes.deps.json
+D:\Asp.net project\AirTicketManager\AirTicketEntittes\bin\Debug\net8.0\AirTicketEntittes.dll
+D:\Asp.net project\AirTicketManager\AirTicketEntittes\bin\Debug\net8.0\AirTicketEntittes.pdb
+D:\Asp.net project\AirTicketManager\AirTicketEntittes\obj\Debug\net8.0\AirTicketEntittes.GeneratedMSBuildEditorConfig.editorconfig
+D:\Asp.net project\AirTicketManager\AirTicketEntittes\obj\Debug\net8.0\AirTicketEntittes.AssemblyInfoInputs.cache
+D:\Asp.net project\AirTicketManager\AirTicketEntittes\obj\Debug\net8.0\AirTicketEntittes.AssemblyInfo.cs
+D:\Asp.net project\AirTicketManager\AirTicketEntittes\obj\Debug\net8.0\AirTicketEntittes.csproj.CoreCompileInputs.cache
+D:\Asp.net project\AirTicketManager\AirTicketEntittes\obj\Debug\net8.0\AirTicketEntittes.dll
+D:\Asp.net project\AirTicketManager\AirTicketEntittes\obj\Debug\net8.0\refint\AirTicketEntittes.dll
+D:\Asp.net project\AirTicketManager\AirTicketEntittes\obj\Debug\net8.0\AirTicketEntittes.pdb
+D:\Asp.net project\AirTicketManager\AirTicketEntittes\obj\Debug\net8.0\ref\AirTicketEntittes.dll
+D:\Asp.net project\AirTicketManager\AirTicketEntittes\obj\Debug\net8.0\AirTicketEntittes.csproj.AssemblyReference.cache
