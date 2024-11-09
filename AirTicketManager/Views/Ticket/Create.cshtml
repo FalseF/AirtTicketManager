@@ -7,6 +7,7 @@
         <title>
             Create Ticket
         </title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body>
         <div class="form-container">
@@ -45,10 +46,7 @@
             <div class="form-group">
                 <label for="LebelId">Lebel</label>
                 <select id="LebelId" name="LebelId" class="select-box">
-                    @foreach (var item in Model.AvailableLebel)
-                    {
-                        <option value="@item.Value">@item.Text</option>
-                    }
+                    <!-- The options will be populated via AJAX -->
                 </select>
             </div>
 
@@ -61,5 +59,58 @@
         </div>
      
     </div>
+    <script>
+        // When the page is loaded, make an AJAX call to fetch Lebel options
+        $(document).ready(function () {
+            $.ajax({
+                url: '@Url.Action("GetLebels", "Ticket")',  // The URL to your GetLebels action
+                type: 'GET',
+                success: function (data) {
+                    // Clear existing options
+                    $('#LebelId').empty();
+
+                    // Append new options to the Lebel dropdown
+                    $.each(data, function (index, item) {
+                        $('#LebelId').append('<option value="' + item.value + '">' + item.text + '</option>');
+                    });
+                },
+                error: function () {
+                    alert('Error loading Lebel data.');
+                }
+            });
+        });
+    </script>
+   @*  <script>
+        // When the Priority dropdown changes, trigger the AJAX call to populate Lebel dropdown
+        $('#PriorityId').change(function () {
+            // Get selected priority id
+            var priorityId = $(this).val();
+
+            // Check if a valid priority is selected (you can adjust validation as needed)
+            if (priorityId) {
+                // Make an AJAX call to get Lebel options
+                $.ajax({
+                    url: '@Url.Action("GetLebels", "Ticket")', // The URL to your GetLebels action
+                    type: 'GET',
+                    success: function (data) {
+                        // Clear the existing options in the Lebel dropdown
+                        $('#LebelId').empty();
+
+                        // Append the new options to the Lebel dropdown
+                        $.each(data, function (index, item) {
+                            $('#LebelId').append('<option value="' + item.value + '">' + item.text + '</option>');
+                        });
+                    },
+                    error: function () {
+                        alert('Error loading Lebel data.');
+                    }
+                });
+            } else {
+                // If no priority is selected, clear the Lebel dropdown
+                $('#LebelId').empty();
+            }
+        });
+    </script> *@
+
 </body>
 </html>

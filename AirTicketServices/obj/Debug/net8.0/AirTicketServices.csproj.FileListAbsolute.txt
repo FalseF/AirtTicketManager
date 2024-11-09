@@ -13,3 +13,19 @@ D:\Asp.net project\AirTicketManager\AirTicketServices\bin\Debug\net8.0\AirTicket
 D:\Asp.net project\AirTicketManager\AirTicketServices\bin\Debug\net8.0\AirTicketEntittes.pdb
 D:\Asp.net project\AirTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicketServices.csproj.AssemblyReference.cache
 D:\Asp.net project\AirTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicke.840AF3C1.Up2Date
+D:\AirtTicketManager\AirtTicketManager\AirTicketServices\bin\Debug\net8.0\AirTicketServices.deps.json
+D:\AirtTicketManager\AirtTicketManager\AirTicketServices\bin\Debug\net8.0\AirTicketServices.dll
+D:\AirtTicketManager\AirtTicketManager\AirTicketServices\bin\Debug\net8.0\AirTicketServices.pdb
+D:\AirtTicketManager\AirtTicketManager\AirTicketServices\bin\Debug\net8.0\AirTicketEntittes.dll
+D:\AirtTicketManager\AirtTicketManager\AirTicketServices\bin\Debug\net8.0\AirTicketEntittes.pdb
+D:\AirtTicketManager\AirtTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicketServices.csproj.AssemblyReference.cache
+D:\AirtTicketManager\AirtTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicketServices.GeneratedMSBuildEditorConfig.editorconfig
+D:\AirtTicketManager\AirtTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicketServices.AssemblyInfoInputs.cache
+D:\AirtTicketManager\AirtTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicketServices.AssemblyInfo.cs
+D:\AirtTicketManager\AirtTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicketServices.csproj.CoreCompileInputs.cache
+D:\AirtTicketManager\AirtTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicketServices.sourcelink.json
+D:\AirtTicketManager\AirtTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicke.840AF3C1.Up2Date
+D:\AirtTicketManager\AirtTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicketServices.dll
+D:\AirtTicketManager\AirtTicketManager\AirTicketServices\obj\Debug\net8.0\refint\AirTicketServices.dll
+D:\AirtTicketManager\AirtTicketManager\AirTicketServices\obj\Debug\net8.0\AirTicketServices.pdb
+D:\AirtTicketManager\AirtTicketManager\AirTicketServices\obj\Debug\net8.0\ref\AirTicketServices.dll

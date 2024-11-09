@@ -36,7 +36,7 @@ namespace AirTicketManager.Controllers
            
             var model = new TicketViewModel();
             model.AvailablePriorites = _ticketRepositoryService.GetAllPriorities();
-            model.AvailableLebel = _ticketRepositoryService.PrepareLebels();
+            model.AvailableLebel = new List<SelectListItem>();
 
             return View(model);
         }
@@ -119,8 +119,10 @@ namespace AirTicketManager.Controllers
             return View(ticket);
         }
         // POST: Ticket/DeleteConfirmed/5
-        [HttpPost, ActionName("DeleteConfirmed")]
-        [ValidateAntiForgeryToken]
+        //[HttpPost, ActionName("DeleteConfirmed")]
+        //[ValidateAntiForgeryToken]
+        // POST: Ticket/Edit/5
+        [HttpPost]
         public ActionResult DeleteConfirmed(int id)
         {
             // Call the repository method to delete the ticket
@@ -135,7 +137,13 @@ namespace AirTicketManager.Controllers
                 return Json(new { success = false }); // Return a JSON response indicating failure
             }
         }
-
+        // Method to handle AJAX request to get Lebel values
+        [HttpGet]
+        public JsonResult GetLebels()
+        {
+            var lebels = _ticketRepositoryService.PrepareLebels(); // Fetch this from your database or logic
+            return Json(lebels);
+        }
 
     }
 }

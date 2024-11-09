@@ -17,3 +17,23 @@ D:\Asp.net project\AirTicketManager\AirTicketBLL\bin\Debug\net8.0\AirTicketEntit
 D:\Asp.net project\AirTicketManager\AirTicketBLL\bin\Debug\net8.0\AirTicketEntittes.pdb
 D:\Asp.net project\AirTicketManager\AirTicketBLL\bin\Debug\net8.0\AirTicketServices.dll
 D:\Asp.net project\AirTicketManager\AirTicketBLL\bin\Debug\net8.0\AirTicketServices.pdb
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\bin\Debug\net8.0\AirTicketBLL.deps.json
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\bin\Debug\net8.0\AirTicketBLL.dll
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\bin\Debug\net8.0\AirTicketBLL.pdb
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\bin\Debug\net8.0\AirTicketDAL.dll
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\bin\Debug\net8.0\AirTicketEntittes.dll
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\bin\Debug\net8.0\AirTicketServices.dll
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\bin\Debug\net8.0\AirTicketDAL.pdb
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\bin\Debug\net8.0\AirTicketEntittes.pdb
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\bin\Debug\net8.0\AirTicketServices.pdb
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\obj\Debug\net8.0\AirTicketBLL.csproj.AssemblyReference.cache
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\obj\Debug\net8.0\AirTicketBLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\obj\Debug\net8.0\AirTicketBLL.AssemblyInfoInputs.cache
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\obj\Debug\net8.0\AirTicketBLL.AssemblyInfo.cs
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\obj\Debug\net8.0\AirTicketBLL.csproj.CoreCompileInputs.cache
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\obj\Debug\net8.0\AirTicketBLL.sourcelink.json
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\obj\Debug\net8.0\AirTicke.ABCDB4D9.Up2Date
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\obj\Debug\net8.0\AirTicketBLL.dll
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\obj\Debug\net8.0\refint\AirTicketBLL.dll
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\obj\Debug\net8.0\AirTicketBLL.pdb
+D:\AirtTicketManager\AirtTicketManager\AirTicketBLL\obj\Debug\net8.0\ref\AirTicketBLL.dll

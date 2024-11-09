@@ -1,7 +1,7 @@
 ﻿@model List<AirTicketEntittes.TicketViewModel>
-@{
+@* @{
     Layout = "_Layout";
-}
+} *@
 <div class="table-container">
     <h3>List of tickets</h3>
     <table id="ticketsTable" class="display" cellspacing="0" width="100%">
@@ -14,6 +14,10 @@
                 <th>Arrival Date</th>
                 <th>Ticket Price</th>
                 <th>Actions</th>
+                <th>Departure </th>
+                <th>Arrival </th>
+                <th>Ticket </th>
+                <th>ActionRRs</th>
             </tr>
         </thead>
         <tbody>
@@ -130,19 +134,23 @@
             $('#confirmDeleteBtn').click(function () {
                 if (ticketIdToDelete) {
                     // Perform AJAX delete request
+                    console.log(ticketIdToDelete);
                     $.ajax({
                         url: '/Ticket/DeleteConfirmed/' + ticketIdToDelete, // AJAX URL for deleting
+                        dataType: 'json', // Expect JSON response
                         method: 'POST', // Use POST for deletion
                         success: function (response) {
                             if (response.success) {
                                 // On success, remove the row from the table
                                 $('tr[data-ticket-id="' + ticketIdToDelete + '"]').remove();
                                 $('#deleteConfirmationModal').hide(); // Hide the modal
+                                location.reload();
                             } else {
                                 alert('Error deleting ticket.');
                             }
                         },
                         error: function () {
+                            console.log("response ase nai");
                             alert('Error deleting ticket.');
                         }
                     });
