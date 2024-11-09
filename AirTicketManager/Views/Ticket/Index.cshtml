@@ -1,7 +1,7 @@
 ﻿@model List<AirTicketEntittes.TicketViewModel>
-@* @{
+@{
     Layout = "_Layout";
-} *@
+}
 <div class="table-container">
     <h3>List of tickets</h3>
     <table id="ticketsTable" class="display" cellspacing="0" width="100%">
@@ -14,10 +14,6 @@
                 <th>Arrival Date</th>
                 <th>Ticket Price</th>
                 <th>Actions</th>
-                <th>Departure </th>
-                <th>Arrival </th>
-                <th>Ticket </th>
-                <th>ActionRRs</th>
             </tr>
         </thead>
         <tbody>
@@ -64,58 +60,58 @@
     </div>
 </div>
 @section Scripts {
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- DataTables CSS -->
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 
-<!-- DataTables JS -->
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        // Initialize DataTable
-        $('#ticketsTable').DataTable({
-            "paging": true, // Enable pagination
-            "searching": true, // Enable search box
-            "ordering": true, // Enable column sorting
-            "lengthChange": true, // Allow changing number of rows per page
-            "pageLength": 10, // Default number of rows per page
-            "responsive": true // Make table responsive on mobile
-        });
-
-        // Handle the View button click event
-        $('.view-btn').click(function () {
-            var ticketId = $(this).data('ticket-id');
-
-            // Perform AJAX call to load ticket details
-            $.ajax({
-                url: '/Ticket/Details/' + ticketId, // Corrected URL for AJAX call
-                method: 'GET',
-                success: function (response) {
-                    // Inject the ticket details into the modal
-                    $('#ticketDetailsContent').html(response);
-                    // Show the modal
-                    $('#ticketDetailsModal').show();
-                },
-                error: function () {
-                    alert('Error loading ticket details.');
-                }
+    <script>
+        $(document).ready(function () {
+            // Initialize DataTable
+            $('#ticketsTable').DataTable({
+                "paging": true, // Enable pagination
+                "searching": true, // Enable search box
+                "ordering": true, // Enable column sorting
+                "lengthChange": true, // Allow changing number of rows per page
+                "pageLength": 10, // Default number of rows per page
+                "responsive": true // Make table responsive on mobile
             });
-        });
 
-        // Handle the Cancel button click event
-        $('#cancelBtn').click(function () {
-            $('#ticketDetailsModal').hide(); // Close the modal
-            $('#ticketDetailsContent').empty(); // Clear modal content
-        });
+            // Handle the View button click event
+            $('.view-btn').click(function () {
+                var ticketId = $(this).data('ticket-id');
 
-        // Close the modal when clicking the close button (X)
-        $('.close').click(function () {
-            $('#ticketDetailsModal').hide();
-            $('#ticketDetailsContent').empty(); // Clear modal content
-        });
+                // Perform AJAX call to load ticket details
+                $.ajax({
+                    url: '/Ticket/Details/' + ticketId, // Corrected URL for AJAX call
+                    method: 'GET',
+                    success: function (response) {
+                        // Inject the ticket details into the modal
+                        $('#ticketDetailsContent').html(response);
+                        // Show the modal
+                        $('#ticketDetailsModal').show();
+                    },
+                    error: function () {
+                        alert('Error loading ticket details.');
+                    }
+                });
+            });
+
+            // Handle the Cancel button click event
+            $('#cancelBtn').click(function () {
+                $('#ticketDetailsModal').hide(); // Close the modal
+                $('#ticketDetailsContent').empty(); // Clear modal content
+            });
+
+            // Close the modal when clicking the close button (X)
+            $('.close').click(function () {
+                $('#ticketDetailsModal').hide();
+                $('#ticketDetailsContent').empty(); // Clear modal content
+            });
 
 
             // Variable to hold the ticket ID to be deleted
@@ -168,37 +164,6 @@
             $('.close').click(function () {
                 $('#deleteConfirmationModal').hide();
             });
-    });
-</script>
-
-<style>
-    /* Modal styling */
-    .modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: none;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .modal-content {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        width: 50%;
-    }
-
-    .close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-        font-size: 24px;
-    }
-</style>
-
+        });
+    </script>
 }
