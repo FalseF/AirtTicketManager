@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AirTicketManager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bd93494c6b9b5258fae05c04557fe010ce224b3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5244f89055f70dcafe2040093ac8a0bb65cf4ad4")]
 [assembly: System.Reflection.AssemblyProductAttribute("AirTicketManager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AirTicketManager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

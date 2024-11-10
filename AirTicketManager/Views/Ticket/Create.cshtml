@@ -1,14 +1,16 @@
 ﻿@model AirTicketEntittes.TicketViewModel
+
 @{
     Layout = "_Layout";
 }
-    <body>
-        <div class="form-container">
+
+<body>
+    <div class="form-container">
         <h2>Create New Ticket</h2>
         <form method="POST" asp-controller="Ticket" asp-action="Create">
             <div class="form-group">
                 <label for="PassengerName">Passenger Name</label>
-                <input type="text" id="PassengerName" name="PassengerName"/>
+                <input type="text" id="PassengerName" name="PassengerName" />
             </div>
 
             <div class="form-group">
@@ -18,7 +20,7 @@
 
             <div class="form-group">
                 <label for="ArrivalDate">Arrival Date and Time</label>
-                <input type="date" id="ArrivalDate" name="ArrivalDate"  />
+                <input type="date" id="ArrivalDate" name="ArrivalDate" />
             </div>
 
             <div class="form-group">
@@ -28,7 +30,7 @@
 
             <div class="form-group">
                 <label for="PriorityId">Priority</label>
-                <select id="PriorityId" name="PriorityId" class="select-box" >
+                <select id="PriorityId" name="PriorityId" class="select-box">
                     @foreach (var item in Model.AvailablePriorites)
                     {
                         <option value="@item.Value">@item.Text</option>
@@ -39,6 +41,7 @@
             <div class="form-group">
                 <label for="LebelId">Lebel</label>
                 <select id="LebelId" name="LebelId" class="select-box">
+                    <option value="">Select Lebel</option>
                     <!-- The options will be populated via AJAX -->
                 </select>
             </div>
@@ -48,62 +51,40 @@
                 <a href="@Url.Action("Index", "Home")" class="submit-btn cancel-btn">Cancel</a>
             </div>
         </form>
+
         <div class="form-footer">
             <p>© 2024 Your Company</p>
         </div>
-     
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
         // When the page is loaded, make an AJAX call to fetch Lebel options
         $(document).ready(function () {
+            // Check if the page is ready
+            console.log("Page is loaded, making AJAX call...");
+
             $.ajax({
                 url: '@Url.Action("GetLebels", "Ticket")',  // The URL to your GetLebels action
                 type: 'GET',
                 success: function (data) {
-                    // Clear existing options
+                    console.log("Received data:", data);
+
+                    // Clear the Lebel dropdown before adding new options
                     $('#LebelId').empty();
+                    $('#LebelId').append('<option value="">Select Lebel</option>');  // Add default placeholder option
 
                     // Append new options to the Lebel dropdown
                     $.each(data, function (index, item) {
                         $('#LebelId').append('<option value="' + item.value + '">' + item.text + '</option>');
                     });
                 },
-                error: function () {
+                error: function (xhr, status, error) {
+                    console.error("Error loading Lebels:", status, error);
                     alert('Error loading Lebel data.');
                 }
             });
         });
     </script>
-   @*  <script>
-        // When the Priority dropdown changes, trigger the AJAX call to populate Lebel dropdown
-        $('#PriorityId').change(function () {
-            // Get selected priority id
-            var priorityId = $(this).val();
-
-            // Check if a valid priority is selected (you can adjust validation as needed)
-            if (priorityId) {
-                // Make an AJAX call to get Lebel options
-                $.ajax({
-                    url: '@Url.Action("GetLebels", "Ticket")', // The URL to your GetLebels action
-                    type: 'GET',
-                    success: function (data) {
-                        // Clear the existing options in the Lebel dropdown
-                        $('#LebelId').empty();
-
-                        // Append the new options to the Lebel dropdown
-                        $.each(data, function (index, item) {
-                            $('#LebelId').append('<option value="' + item.value + '">' + item.text + '</option>');
-                        });
-                    },
-                    error: function () {
-                        alert('Error loading Lebel data.');
-                    }
-                });
-            } else {
-                // If no priority is selected, clear the Lebel dropdown
-                $('#LebelId').empty();
-            }
-        });
-    </script> *@
-
 </body>
