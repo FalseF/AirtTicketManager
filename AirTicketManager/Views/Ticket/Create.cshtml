@@ -7,7 +7,7 @@
 <body>
     <div class="form-container">
         <h2>Create New Ticket</h2>
-        <form method="POST" asp-controller="Ticket" asp-action="Create">
+        <form id="createTicketForm" method="POST" asp-controller="Ticket" asp-action="Create">
             <div class="form-group">
                 <label for="PassengerName">Passenger Name</label>
                 <input type="text" id="PassengerName" name="PassengerName" />
@@ -47,7 +47,7 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="submit-btn">Create Ticket</button>
+                <button type="button" id="submitTicket" class="submit-btn">Create Ticket</button> <!-- Change button type to button -->
                 <a href="@Url.Action("Index", "Home")" class="submit-btn cancel-btn">Cancel</a>
             </div>
         </form>
@@ -59,31 +59,67 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script>
-        // When the page is loaded, make an AJAX call to fetch Lebel options
-        $(document).ready(function () {
-            // Check if the page is ready
-            console.log("Page is loaded, making AJAX call...");
+     <script>
+            // Function to fetch Lebel options and populate the dropdown
+            function fetchLebels() {
+                $.ajax({
+                    url: '@Url.Action("GetLebels", "Ticket")', // Your controller action URL
+                    type: 'GET',
+                    success: function (data) {
+                        $('#LebelId').empty();
+                        $('#LebelId').append('<option value="">Select Lebel</option>'); // Add default option
 
+                        // Populate the Lebel dropdown
+                        $.each(data, function (index, item) {
+                            $('#LebelId').append('<option value="' + item.value + '">' + item.text + '</option>');
+                        });
+                    },
+                    error: function () {
+                        alert('Error loading Lebel data.');
+                    }
+                });
+            }
+
+        // Function to handle the form submission via AJAX
+        function submitTicketForm() {
+            // Create the ViewModel object using form data
+            var formData = {
+                PassengerName: $('#PassengerName').val(),
+                DepartureDate: $('#DepartureDate').val(),
+                ArrivalDate: $('#ArrivalDate').val(),
+                TicketPrice: $('#TicketPrice').val(),
+                PriorityId: $('#PriorityId').val(),
+                LebelId: $('#LebelId').val() // Add the LebelId from the select box
+            };
+            // Send the AJAX request to submit the form
             $.ajax({
-                url: '@Url.Action("GetLebels", "Ticket")',  // The URL to your GetLebels action
-                type: 'GET',
-                success: function (data) {
-                    console.log("Received data:", data);
-
-                    // Clear the Lebel dropdown before adding new options
-                    $('#LebelId').empty();
-                    $('#LebelId').append('<option value="">Select Lebel</option>');  // Add default placeholder option
-
-                    // Append new options to the Lebel dropdown
-                    $.each(data, function (index, item) {
-                        $('#LebelId').append('<option value="' + item.value + '">' + item.text + '</option>');
-                    });
+                url: '@Url.Action("CreateTicketAjax", "Ticket")', // Your controller action URL
+                type: 'POST',
+                data: JSON.stringify(formData), // Send the ViewModel as JSON
+                contentType: 'application/json', // Set content type as JSON
+                success: function (response) {
+                    if (response.success) {
+                        alert(response.message); // Success message
+                        window.location.href = '@Url.Action("Index", "Home")'; // Redirect to another page (e.g., home page)
+                    } else {
+                        alert(response.message); // Error message
+                    }
                 },
-                error: function (xhr, status, error) {
-                    console.error("Error loading Lebels:", status, error);
-                    alert('Error loading Lebel data.');
+                error: function () {
+                    alert('An error occurred while submitting the form.');
                 }
+            });
+        }
+
+        // When the page is loaded, fetch Lebel options and handle the form submission
+        $(document).ready(function () {
+            // Fetch Lebel options when the page loads
+            fetchLebels();
+
+            // Handle form submission when the "Create Ticket" button is clicked
+            $('#submitTicket').on('click', function (e) {
+                e.preventDefault(); // Prevent the default form submission
+                submitTicketForm(); // Call the function to submit the form via AJAX
             });
         });
     </script>

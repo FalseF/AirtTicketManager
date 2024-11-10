@@ -144,6 +144,20 @@ namespace AirTicketManager.Controllers
             var lebels = _ticketRepositoryService.PrepareLebels(); // Fetch this from your database or logic
             return Json(lebels);
         }
+        [HttpPost]
+        public IActionResult CreateTicketAjax([FromBody] TicketViewModel viewModel)
+        {
+            int isSuccess = _ticketRepositoryService.AddTicket(viewModel.PassengerName, viewModel.DepartureDate, viewModel.ArrivalDate, viewModel.TicketPrice, viewModel.PriorityId);
+
+            if (isSuccess==1)
+            {
+                // Your logic to create the ticket (e.g., save to database)
+                return Json(new { success = true, message = "Ticket created successfully!" });
+            }
+
+            // Return validation error message if the model is invalid
+            return Json(new { success = false, message = "There was an error creating the ticket." });
+        }
 
     }
 }
