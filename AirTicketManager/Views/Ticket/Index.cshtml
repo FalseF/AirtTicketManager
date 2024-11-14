@@ -78,11 +78,10 @@
                 "ordering": true, // Enable column sorting
                 "lengthChange": true, // Allow changing number of rows per page
                 "pageLength": 10, // Default number of rows per page
-                "responsive": true // Make table responsive on mobile
             });
 
-            // Handle the View button click event
-            $('.view-btn').click(function () {
+            // Use event delegation to handle the View button click event
+            $('#ticketsTable').on('click', '.view-btn', function () {
                 var ticketId = $(this).data('ticket-id');
 
                 // Perform AJAX call to load ticket details
@@ -113,12 +112,11 @@
                 $('#ticketDetailsContent').empty(); // Clear modal content
             });
 
-
             // Variable to hold the ticket ID to be deleted
             var ticketIdToDelete = null;
 
-            // Handle the Delete button click event
-            $('.delete-btn').click(function () {
+            // Use event delegation to handle the Delete button click event
+            $('#ticketsTable').on('click', '.delete-btn', function () {
                 // Get the ticket ID from the button's data attribute
                 ticketIdToDelete = $(this).data('ticket-id');
 
@@ -165,5 +163,6 @@
                 $('#deleteConfirmationModal').hide();
             });
         });
+
     </script>
 }
