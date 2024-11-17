@@ -30,7 +30,8 @@
                         <!-- Action buttons with Bootstrap styles -->
                         <!-- View button to open modal -->
                         <button class="btn btn-info btn-sm view-btn" data-ticket-id="@ticket.TicketID">View</button>
-                        <a href="@Url.Action("Edit", "Ticket", new { id = ticket.TicketID })" class="btn btn-warning btn-sm">Edit</a>
+                        <button class="btn btn-info btn-sm edit-btn" data-ticket-id="@ticket.TicketID">Edit</button>
+                        @* <a href="@Url.Action("Edit", "Ticket", new { id = ticket.TicketID })" class="btn btn-warning btn-sm">Edit</a> *@
                         <button class="btn btn-info btn-sm delete-btn" data-ticket-id="@ticket.TicketID">Delete</button>
                     </td>
                 </tr>
@@ -90,12 +91,55 @@
                     method: 'GET',
                     success: function (response) {
                         // Inject the ticket details into the modal
-                        $('#ticketDetailsContent').html(response);
-                        // Show the modal
-                        $('#ticketDetailsModal').show();
+                        $('#globalModalLabel').text('Ticket Details');
+                        $('#modalBodyContent').html(response); // Insert ticket details
+                        $('#saveChangesBtn').hide(); // Hide the save button in view mode
+                        $('#globalModal').modal('show');
                     },
                     error: function () {
                         alert('Error loading ticket details.');
+                    }
+                });
+            });
+
+            // Handle the Edit button click
+            $('#ticketsTable').on('click', '.edit-btn', function () {
+                var ticketId = $(this).data('ticket-id');
+                $.ajax({
+                    url: '/Ticket/Edit/' + ticketId,
+                    method: 'GET',
+                    success: function (response) {
+                        // Update modal for editing
+                        $('#globalModalLabel').text('Edit Ticket');
+                        $('#modalBodyContent').html(response); // Inject the edit form
+                        $('#saveChangesBtn').show(); // Show the save button
+                        $('#globalModal').modal('show');
+                    },
+                    error: function () {
+                        alert('Error loading ticket edit form.');
+                    }
+                });
+            });
+
+            // Handle save button click in the modal
+            $('#saveChangesBtn').click(function () {
+                var form = $('#modalBodyContent').find('form');
+                var formData = form.serialize(); // Serialize form data
+
+                $.ajax({
+                    url: form.attr('action'),
+                    method: form.attr('method'),
+                    data: formData,
+                    success: function (response) {
+                        if (response.success) {
+                            $('#globalModal').modal('hide'); // Close the modal
+                            location.reload(); // Refresh the page
+                        } else {
+                            alert('Error saving changes.');
+                        }
+                    },
+                    error: function () {
+                        alert('Error saving changes.');
                     }
                 });
             });

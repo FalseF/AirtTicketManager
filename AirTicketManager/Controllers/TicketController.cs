@@ -83,27 +83,12 @@ namespace AirTicketManager.Controllers
         {
                var isSuccess = _ticketRepositoryService.UpdateTicket(viewModel.TicketID, viewModel.PassengerName, viewModel.DepartureDate, viewModel.ArrivalDate, viewModel.TicketPrice, viewModel.PriorityId);
 
-            //if (ModelState.IsValid)
-            //{
-            //    var isSuccess = _ticketRepositoryService.UpdateTicket(viewModel.TicketID, viewModel.PassengerName, viewModel.DepartureDate, viewModel.ArrivalDate, viewModel.TicketPrice, viewModel.PriorityId);
-
-            //    if (isSuccess == 1)
-            //    {
-            //        return RedirectToAction("Index");
-            //    }
-            //    else
-            //    {
-            //        return View(viewModel);
-            //    }
-            //}
-
-            // Reload the available priorities and labels in case of validation failure
-            //viewModel.AvailablePriorites = _ticketRepositoryService.GetAllPriorities();
-            //viewModel.AvailableLebel = _ticketRepositoryService.PrepareLebels();
-
-
-            //return View(viewModel);
-            return RedirectToAction("Index");
+            if (isSuccess > 0)
+            {
+                return Json(new { success = true }); // Return success response for AJAX
+            }
+            return Json(new { success = false, message = "Failed to update ticket." });
+           
         }
         public ActionResult Delete(int id)
         {
